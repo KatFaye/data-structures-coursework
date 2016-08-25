@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
 	vector<char> Cipher;
 
 	//cout << "n r d" << endl;
-	while (getline(cin, input)) { //works for 12 input -- fix
+	while (getline(cin, input)) { 
 
 		Cipher.clear();
 		string arr[3];
