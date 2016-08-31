@@ -32,8 +32,8 @@ int main(int argc, char *argv[]) {
 
 	//output result
 
-	//while(getline(cin, input)) {
-	getline(cin, input);
+	while(getline(cin, input)) {
+	//getline(cin, input);
 		stringstream nums(input);
 		while (nums >> number) {
 			a[i].size = 0;
@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 	for(int i = 0;i<3;i++) {
 			a[i].clear();
 		}
-	//}
+	}
     return 0;
 }
 template <typename T>
@@ -110,7 +110,7 @@ List<T> List<T>::addLists(List<T> a, List<T> b) {
 			smaller = smaller-> next;
 		cin = cout;
 	}
-	if(cin==1) {
+	if(cin==1) { //overflow on last addition
 		c.addNode(1);
 	}
 
