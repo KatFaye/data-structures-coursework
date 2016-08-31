@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
 
 	while(getline(cin, input)) {
 	//getline(cin, input);
+		i = 0;
 		stringstream nums(input);
 		while (nums >> number) {
 			a[i].size = 0;
@@ -51,8 +52,8 @@ int main(int argc, char *argv[]) {
 
 		a[2] = a[0].addLists(a[0], a[1]);
 		a[2].print();
-	for(int i = 0;i<3;i++) {
-			a[i].clear();
+	for(int c = 0;c<3;c++) {
+			a[c].clear();
 		}
 	}
     return 0;
@@ -80,9 +81,10 @@ List<T> List<T>::addLists(List<T> a, List<T> b) {
 
 //determine which is larger (if applicable)
 	List<T> c;
-	int cin = 0, cout, s, sum;
+	int cin, cout, s, sum;
 	node<T> *larger, *smaller;
 
+	cin = cout = sum = s = 0;
 	if (a.size > b.size) {
 		larger = a.head;
 		smaller = b.head;
@@ -104,7 +106,9 @@ List<T> List<T>::addLists(List<T> a, List<T> b) {
 		} else {
 			cout = 0;
 		}
+		//std::cout << "adding number: " << larger->data << "+" << s << "+" << cin << "=" << sum << endl;
 		c.addNode(sum);
+		//c.print();
 		larger = larger->next;
 		if(smaller!=nullptr)
 			smaller = smaller-> next;
@@ -121,9 +125,13 @@ void List<T>::clear() {
 
     node<T> *temp = head;
     while(temp->next) {
-           temp = head->next;
-           delete head;
-           head = temp;
+    	
+        temp = head->next;
+        delete head;
+        head = temp;
+           
    }
+   delete head;
+   head = nullptr;
 }
 // vim: set sts=4 sw=4 ts=8 expandtab ft=cpp:
