@@ -22,11 +22,11 @@ int main(int argc, char *argv[]) {
 
     	int arr[n];
     	for(int i=0; i<n; i++) {
-    		ssinp >> arr[n];
-            cout << arr[n] << " ";
+    		ssinp >> arr[i];
+         //   cout << arr[n] << " ";
     	
     	}
-        cout << typeid(arr[0]).name() << " " << arr[0] + arr[1] << " " << endl;
+       // cout << typeid(arr[0]).name() << " " << arr[0] + arr[1] << " " << endl;
     	bool bst = isBST(arr, INT_MIN, INT_MAX, n, 0);
     	if(bst)
     		cout << "Tree " << i << " is a BST\n";
@@ -38,11 +38,11 @@ int main(int argc, char *argv[]) {
 }
 bool isBST(int arr[], int min, int max, int n, int i) {
     bool result = true;
-    if(arr[i] == -1) {
+    if(arr[i] == -1) { //empty node
         return true;
     }
     if(arr[i] <= min || arr[i] > max) {
-        cout << arr[i] << " min: " << min << " max: " << max;
+        //cout << arr[i] << " min: " << min << " max: " << max;
         return false;
     }
     if((2*i)+1 < n) {
@@ -57,7 +57,7 @@ bool isBST(int arr[], int min, int max, int n, int i) {
             return false;
         }
     }
-    return result;
+    return result; //should be true if it reaches this point
 }
 
 // vim: set sts=4 sw=4 ts=8 expandtab ft=cpp:
