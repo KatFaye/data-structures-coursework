@@ -23,7 +23,7 @@ public:
 	void print();
 private:
 	vector<int> find(int val); //returns vector of path to node
-	void insert(int val, Node * curr); //add value to bst
+	void insert(int val, Node * &curr); //add value to bst
 	void delBST(Node * curr); //delete bst
 	void print(Node * curr); //inorder traversal
 	Node * root;
@@ -67,7 +67,7 @@ bst::bst() {
 bst::~bst() {
 	delBST(root);
 }
-void bst::insert(int val, Node * curr) {
+void bst::insert(int val, Node * &curr) {
 
 	if(val < curr->val) { // go to left subtree
 		if(curr->left!=nullptr)
