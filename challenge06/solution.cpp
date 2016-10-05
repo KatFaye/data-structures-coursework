@@ -73,22 +73,13 @@ void bst::insert(int val, Node * curr) {
 		if(curr->left!=nullptr)
 			insert(val, curr->left);
 		else {
-			curr->left = new Node;
-			Node * newNode = curr->left;
-			newNode->val = val;
-			newNode->left = nullptr;
-			newNode->right = nullptr;
+			curr->left = new Node{val, nullptr, nullptr};
 		}
 	} else { //go to right subtree
 		if(curr->right!=nullptr)
 			insert(val, curr->right);
-		else {
-			
-			curr->right = new Node;
-			Node * newNode = curr->right;
-			newNode->val = val;
-			newNode->left = nullptr;
-			newNode->right = nullptr;
+		else {			
+			curr->right = new Node{val, nullptr, nullptr};
 		}
 	}
 
@@ -97,10 +88,7 @@ void bst::insert(int val) {
 	if(root!=nullptr)
 		insert(val, root);
 	else {
-		root = new Node;
-		root->val = val;
-		root->left = nullptr;
-		root->right = nullptr;
+		root = new Node{val, nullptr, nullptr};
 	}
 }
 void bst::print() {
