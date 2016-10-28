@@ -1,4 +1,3 @@
-
 // Challenge 07: Linked List Deduplication
 #include <cstdlib>
 #include <iostream>
@@ -35,6 +34,7 @@ LinkedList::~LinkedList() {
 		delete it;
 		it = next;
 	}
+	delete it;
 }
 void LinkedList::addNode(const int value) { //adds to end of list
 	Node * temp = new Node{value, nullptr};
